@@ -47,6 +47,10 @@ header nav a {
 p {
     font-size: 16pt;
 }
+a {
+    text-decoration: none;
+    font-size: 16pt;
+}
 h2{
     font-size: 45pt;
 }
@@ -272,4 +276,5 @@ footer {
 }
 footer p {
     font-size: 12pt;
+
 }
