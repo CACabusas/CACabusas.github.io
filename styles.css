@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Unna", serif;
+    font-family: "Faustina", serif;
 }
 html {
     scroll-behavior: smooth;
@@ -10,6 +10,7 @@ html {
 body {
     line-height: 1.6;
     color: #333;
+    background-color: #f3efdf;
 }
 header {
     position: fixed;
@@ -27,7 +28,7 @@ header nav {
 }
 header nav a {
     color: #fff;
-    margin-right: 20px;
+    margin-right: 60px;
     text-decoration: none;
     font-size: 16pt;
 }
@@ -54,13 +55,14 @@ a {
 }
 h2{
     font-size: 45pt;
+    font-weight: bold;
 }
 h3 {
     font-size: 30pt;
 }
 .hero {
-    background-image: url('https://images.unsplash.com/photo-1748366465774-aaa2160fe78d');
-    color: #fff;
+    background-image: url('https://images.unsplash.com/photo-1764930686117-9bcbeb645740');
+    color: #f3efdf;
 }
 .hero::before {
     content: "";
@@ -89,10 +91,11 @@ section.content {
 section.content h2 {
     margin-bottom: 20px;
     font-size: 40pt;
+    font-weight: bold;
 }
 .parallax.projects {
     background-image: url('https://images.unsplash.com/photo-1580207762145-0ef778b47468');
-    color: #fff;
+    color: #f3efdf;
 }
 .parallax.projects::before {
     content: "";
@@ -107,7 +110,7 @@ section.content h2 {
 }
 .parallax.contact {
     background-image: url('https://images.unsplash.com/photo-1639153697189-04bc5d043f64');
-    color: #fff;
+    color: #f3efdf;
 }
 .parallax.contact::before {
     content: "";
@@ -122,7 +125,7 @@ section.content h2 {
 }
 footer {
     background: #111;
-    color: #fff;
+    color: #f3efdf;
     text-align: center;
     padding: 20px;
 }
@@ -132,6 +135,60 @@ footer {
     }
     .hero h1 {
         font-size: 2.2rem;
+    }
+}
+.tools-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+.tools-row img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+.tool-divider {
+    width: 2px;
+    height: 40px;
+    background: #aaa;
+    opacity: 0.6;
+}
+.tool-icon {
+    position: relative;
+    display: inline-flex;
+}
+.tool-icon::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: -36px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    font-size: 12pt;
+    padding: 6px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.tool-icon:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(4px);
+}
+@media (max-width: 1000px) {
+    .tool-icon::after {
+        bottom: 6px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 10.5pt;
+        padding: 4px 8px;
+        border-radius: 999px;
+        background: rgba(0, 0, 0, 0.75);
     }
 }
 .video-grid {
@@ -209,6 +266,11 @@ footer {
     font-size: 18pt;
     font-weight: 700;
 }
+.video-meta p {
+    color: #777;
+    font-style: italic;
+    font-size: 14pt;
+}
 .video-wrapper {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 */
@@ -254,6 +316,46 @@ footer {
     transform: scale(1.03);
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
+@media (max-width: 1000px) {
+    .channel-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.channel-icon {
+    position: relative;
+    display: block;
+}
+.channel-icon::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: -36px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    font-size: 12pt;
+    padding: 6px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.channel-icon:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(4px);
+}
+@media (max-width: 1000px) {
+    .channel-icon::after {
+        bottom: 12px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 11pt;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(0, 0, 0, 0.75);
+    }
+}
 .video-wrapper video {
     position: absolute;
     top: 0;
@@ -297,5 +399,4 @@ footer {
 }
 footer p {
     font-size: 12pt;
-
 }
