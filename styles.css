@@ -49,7 +49,7 @@ p {
 }
 a {
     text-decoration: none;
-    color: inherit;
+    color: #fff;
     font-size: 16pt;
 }
 h2{
@@ -279,4 +279,5 @@ footer p {
     font-size: 12pt;
 
 }
+
 
