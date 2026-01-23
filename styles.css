@@ -16,21 +16,39 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(0, 0, 0, 0.5) 60%,
+        rgba(0, 0, 0, 0) 100%
+    );
     color: #fff3e4;
     padding: 10px 40px;
     z-index: 1000;
 }
 header nav {
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 header nav a {
     color: #fff3e4;
-    margin-right: clamp(20px, 6vw, 60px);
     text-decoration: none;
     font-size: 16pt;
+}
+header nav a.nav-logo + a {
+    margin-left: auto;
+}
+header nav a:not(.nav-logo) {
+    margin-left: clamp(20px, 6vw, 60px);
+}
+.nav-logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+.nav-logo {
+    display: flex;
+    align-items: center;
 }
 .parallax {
     min-height: 100vh;
@@ -76,7 +94,7 @@ h3 {
     z-index: 2;
 }
 .hero h1 {
-    font-size: 60pt;
+    font-size: 80pt;
     margin-bottom: 10px;
 }
 .hero p {
@@ -92,6 +110,20 @@ section.content h2 {
     margin-bottom: 20px;
     font-size: 40pt;
     font-weight: bold;
+}
+.about p, .language p, .resume p, .resume strong,
+.video-card p, .video-meta {
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: 300;
+}
+.hero p, .proj-description p, .projects p, 
+.contact-item span {
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: 400;
+}
+.about strong, .about a, .proj-description strong {
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: 500;
 }
 .about a {
     color: #777;
